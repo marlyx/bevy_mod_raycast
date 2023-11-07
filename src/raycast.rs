@@ -1,13 +1,9 @@
 use std::f32::EPSILON;
 
-use bevy::{
-    math::Vec3A,
-    prelude::*,
-    render::{
-        mesh::{Indices, VertexAttributeValues},
-        render_resource::PrimitiveTopology,
-    },
-};
+
+use bevy_math::{Mat4, Vec3A};
+use bevy_render::{mesh::{Mesh, VertexAttributeValues, Indices}, render_resource::PrimitiveTopology};
+use bevy_utils::tracing::{warn, error};
 
 use crate::primitives::*;
 
@@ -366,7 +362,7 @@ pub fn raycast_moller_trumbore(
 
 #[cfg(test)]
 mod tests {
-    use bevy::math::Vec3;
+    use bevy_math::Vec3;
 
     use super::*;
 

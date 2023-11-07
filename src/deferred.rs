@@ -21,7 +21,14 @@ use std::{
     marker::PhantomData,
 };
 
-use bevy::{prelude::*, reflect::TypePath, render::camera::Camera, window::PrimaryWindow};
+use bevy_app::{Plugin, App, First};
+use bevy_ecs::prelude::*;
+use bevy_math::{Vec2, Mat4};
+use bevy_reflect::{TypePath, Reflect};
+use bevy_render::camera::Camera;
+use bevy_transform::components::GlobalTransform;
+use bevy_utils::{default, tracing::error};
+use bevy_window::{Window, PrimaryWindow};
 
 use crate::{immediate::*, primitives::*};
 
@@ -493,7 +500,12 @@ pub fn update_target_intersections<T: TypePath + Send + Sync>(
 pub mod debug {
     #![allow(unused)]
 
-    use bevy::{prelude::*, reflect::TypePath};
+    use bevy_ecs::system::{Commands, Query};
+    use bevy_gizmos::gizmos::Gizmos;
+    use bevy_math::{Quat, Vec3};
+    use bevy_reflect::TypePath;
+    use bevy_render::color::Color;
+    use bevy_utils::tracing::info;
     use std::marker::PhantomData;
 
     use crate::prelude::*;
