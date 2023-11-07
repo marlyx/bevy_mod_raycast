@@ -58,7 +58,7 @@ pub mod markers;
 pub mod primitives;
 pub mod raycast;
 
-use bevy_app::{App, First, Plugin, PostUpdate};
+use bevy_app::prelude::*;
 use bevy_derive::Deref;
 use bevy_ecs::prelude::*;
 use bevy_render::camera::Camera;

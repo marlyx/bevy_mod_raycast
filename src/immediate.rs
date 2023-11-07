@@ -8,11 +8,7 @@
 //! don't even need to add a plugin to your application.
 
 use bevy_asset::{Assets, Handle};
-use bevy_ecs::{
-    entity::Entity,
-    query::{Or, With},
-    system::{lifetimeless::Read, Local, Query, Res, SystemParam},
-};
+use bevy_ecs::{prelude::*, system::lifetimeless::Read, system::SystemParam};
 use bevy_math::{Quat, Vec3};
 use bevy_reflect::Reflect;
 use bevy_render::color::Color;

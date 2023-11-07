@@ -21,13 +21,13 @@ use std::{
     marker::PhantomData,
 };
 
-use bevy_app::{App, First, Plugin};
+use bevy_app::prelude::*;
 use bevy_ecs::prelude::*;
 use bevy_math::{Mat4, Vec2};
 use bevy_reflect::{Reflect, TypePath};
 use bevy_render::camera::Camera;
 use bevy_transform::components::GlobalTransform;
-use bevy_utils::{default, tracing::error};
+use bevy_utils::{default, tracing::*};
 use bevy_window::{PrimaryWindow, Window};
 
 use crate::{immediate::*, primitives::*};
