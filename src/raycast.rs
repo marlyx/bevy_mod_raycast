@@ -364,7 +364,7 @@ pub fn raycast_moller_trumbore(
 
 #[cfg(test)]
 mod tests {
-    use bevy_math::Vec3;
+    use bevy::math::Vec3;
 
     use super::*;
 
