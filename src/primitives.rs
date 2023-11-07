@@ -1,6 +1,6 @@
 use bevy_math::{Vec3, Vec3A};
-
 use bevy_reflect::Reflect;
+
 pub use rays::*;
 
 #[non_exhaustive]
