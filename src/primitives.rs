@@ -1,4 +1,4 @@
-use bevy_math::{Vec3A, Vec3};
+use bevy_math::{Vec3, Vec3A};
 
 use bevy_reflect::Reflect;
 pub use rays::*;
@@ -66,7 +66,7 @@ impl IntersectionData {
 /// the `Ray3d` direction is normalized, because it can only be instantiated with the constructor.
 pub mod rays {
     use super::Primitive3d;
-    use bevy_math::{Ray, Vec3A, Vec3, Mat4, Quat, Vec2};
+    use bevy_math::{Mat4, Quat, Ray, Vec2, Vec3, Vec3A};
     use bevy_reflect::Reflect;
     use bevy_render::{camera::Camera, primitives::Aabb};
     use bevy_transform::components::GlobalTransform;

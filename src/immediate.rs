@@ -7,15 +7,21 @@
 //! when you call the `cast_ray` method. See the [`Raycast`] documentation for more details. You
 //! don't even need to add a plugin to your application.
 
-
-use bevy_asset::{Handle, Assets};
-use bevy_ecs::{entity::Entity, query::{With, Or}, system::{SystemParam, Local, Res, Query, lifetimeless::Read}};
-use bevy_reflect::Reflect;
-use bevy_render::{mesh::Mesh, view::ComputedVisibility, primitives::Aabb};
-use bevy_utils::{FloatOrd, tracing::{debug, info_span, debug_span}};
-use bevy_transform::components::GlobalTransform;
+use bevy_asset::{Assets, Handle};
+use bevy_ecs::{
+    entity::Entity,
+    query::{Or, With},
+    system::{lifetimeless::Read, Local, Query, Res, SystemParam},
+};
 use bevy_math::{Quat, Vec3};
+use bevy_reflect::Reflect;
 use bevy_render::color::Color;
+use bevy_render::{mesh::Mesh, primitives::Aabb, view::ComputedVisibility};
+use bevy_transform::components::GlobalTransform;
+use bevy_utils::{
+    tracing::{debug, debug_span, info_span},
+    FloatOrd,
+};
 
 #[cfg(feature = "debug")]
 use bevy_gizmos::gizmos::Gizmos;
